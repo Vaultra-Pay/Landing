@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Single source of truth for horizontal content bounds.
+     Matches the navbar's inner container exactly — all section
+     content must live inside this class so it aligns with the
+     logo (left edge) and Join Waitlist button (right edge). */
+  .site-container {
+    @apply max-w-[1400px] mx-auto px-5 sm:px-6 md:px-10;
+  }
+}
+
+:root {
+  --brand-orange: #ff5a1f;
+  --brand-black: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--brand-black);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Pretendard Variable", Pretendard, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+::selection {
+  background: var(--brand-orange);
+  color: #fff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--brand-black);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-orange);
+}
+
+/* Ambient glow for hero */
+.hero-glow {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 90, 31, 0.25) 0%,
+    rgba(255, 90, 31, 0.08) 30%,
+    transparent 70%
+  );
+  filter: blur(40px);
+}
+
+.hero-glow-secondary {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 90, 31, 0.15) 0%,
+    transparent 60%
+  );
+  filter: blur(60px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-orange {
+  background: linear-gradient(135deg, #ff7a45 0%, #ff5a1f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(28, 28, 28, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-hover:hover {
+  background: rgba(28, 28, 28, 0.7);
+  border-color: rgba(255, 90, 31, 0.2);
+}
+
+/* Animated border */
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-border {
+  position: relative;
+  background: #0a0a0a;
+  border-radius: 16px;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 90, 31, 0.6),
+    rgba(255, 90, 31, 0.1),
+    rgba(255, 90, 31, 0.6)
+  );
+  background-size: 200% 200%;
+  border-radius: 16px;
+  z-index: -1;
+  animation: borderFlow 4s ease infinite;
+}
+
+/* Grid pattern background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Noise texture */
+.noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)'/></svg>");
+}
+
+/* Button shine */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.btn-shine:hover::after {
+  left: 100%;
+}
