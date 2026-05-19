@@ -38,12 +38,11 @@ export function Showcase() {
             The Experience
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-6 leading-[1.05]">
-            <span className="gradient-text">Your personal</span>{" "}
-            <span className="gradient-text-orange">financial engine.</span>
+            <span className="gradient-text">Your personal financial engine </span>{" "}
+            <span className="gradient-text-orange">built for trust.</span>
           </h2>
           <p className="text-lg text-brand-gray-light leading-relaxed">
-            One interface for everything. See your assets, convert between
-            worlds, and move money with clarity.
+            One app for everything. Secure your assets, convert between worlds, and spend with ease.
           </p>
         </motion.div>
 

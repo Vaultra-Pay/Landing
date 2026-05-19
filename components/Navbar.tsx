@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
+import { openNewsletterPopup } from "@/lib/newsletter";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -63,23 +64,27 @@ export function Navbar() {
           >
             How it works
           </a>
-          <a
-            href="#waitlist"
+          <button
+            type="button"
+            onClick={openNewsletterPopup}
             className="btn-shine bg-brand-orange hover:bg-brand-orange-dark transition-colors text-white text-sm font-semibold px-5 py-2.5 rounded-full"
           >
             Join Waitlist
-          </a>
+          </button>
         </div>
 
         {/* Mobile right side */}
         <div className="flex items-center gap-2 md:hidden">
-          <a
-            href="#waitlist"
-            onClick={() => setMenuOpen(false)}
+          <button
+            type="button"
+            onClick={() => {
+              setMenuOpen(false);
+              openNewsletterPopup();
+            }}
             className="btn-shine bg-brand-orange hover:bg-brand-orange-dark transition-colors text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap"
           >
             Join Waitlist
-          </a>
+          </button>
           <button
             type="button"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -112,9 +117,16 @@ export function Navbar() {
               >
                 How it works
               </MobileLink>
-              <MobileLink href="#waitlist" onClick={() => setMenuOpen(false)}>
+              <button
+                type="button"
+                onClick={() => {
+                  setMenuOpen(false);
+                  openNewsletterPopup();
+                }}
+                className="px-3 py-3 rounded-xl text-left text-white/90 hover:bg-white/5 active:bg-white/10 transition-colors text-base font-medium"
+              >
                 Join waitlist
-              </MobileLink>
+              </button>
             </div>
           </motion.div>
         )}

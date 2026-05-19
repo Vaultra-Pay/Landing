@@ -7,21 +7,21 @@ const steps = [
     number: "01",
     title: "Receive Crypto",
     description:
-      "USDT, ETH, BTC and more — land directly in your non-custodial Vaultra wallet.",
+      "BTC, USDT, ETH and more land directly in your non-custodial Vaultra wallet.",
     accent: "Receive",
   },
   {
     number: "02",
     title: "Convert Instantly",
     description:
-      "A single tap converts your digital assets to local fiat — clean rates, no middlemen.",
+      "A single tap converts your digital assets to local fiat - clean rates, no middlemen.",
     accent: "Convert",
   },
   {
     number: "03",
     title: "Spend Anywhere",
     description:
-      "Send to a bank, fund a card, pay bills. Your digital value, now everyday money.",
+      "Send to any bank, fund a card, pay bills. Your digital value, now everyday money.",
     accent: "Spend",
   },
 ];

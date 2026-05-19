@@ -46,7 +46,7 @@ export function PhoneMockup() {
                   Total Balance
                 </div>
                 <AnimatedBalance />
-                <div className="text-xs text-white/70 mt-1">≈ ₦4,820,000</div>
+                <div className="text-xs text-white/70 mt-1">≈ ₦4,819,995</div>
               </div>
             </div>
 
@@ -111,7 +111,7 @@ function AnimatedBalance() {
       transition={{ duration: 3, repeat: Infinity }}
       className="text-3xl font-black text-white tracking-tight"
     >
-      $3,247.82
+      $3,492.75
     </motion.div>
   );
 }
@@ -137,7 +137,7 @@ function ConversionCard() {
           <div className="text-[10px] uppercase tracking-wider text-white/50 mb-1">
             You get
           </div>
-          <div className="text-lg font-bold text-brand-orange">₦161,000</div>
+          <div className="text-lg font-bold text-brand-orange">₦138,000</div>
         </div>
       </div>
       <motion.div

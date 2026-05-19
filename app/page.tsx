@@ -1,10 +1,11 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { Problem } from "@/components/Problem";
 import { Features } from "@/components/Features";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Showcase } from "@/components/Showcase";
-import { Waitlist } from "@/components/Waitlist";
 import { Footer } from "@/components/Footer";
+import { NewsletterPopup } from "@/components/NewsletterPopup";
 import { ShiningDots } from "@/components/ShiningDots";
 
 export default function Home() {
@@ -18,12 +19,14 @@ export default function Home() {
       <div className="relative z-10">
         <Navbar />
         <Hero />
+        <Problem />
         <Features />
         <HowItWorks />
         <Showcase />
-        <Waitlist />
         <Footer />
       </div>
+
+      <NewsletterPopup />
     </main>
   );
 }

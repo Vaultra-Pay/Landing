@@ -1,17 +1,10 @@
 import { NextResponse } from "next/server";
 
 /**
- * Vaultra waitlist endpoint.
- *
- * Email-capture strategy (swap as needed):
- *   - Default: Web3Forms (recommended — 5-min setup, no backend)
- *     Set WEB3FORMS_ACCESS_KEY in .env.local
- *     Get a key at https://web3forms.com (free, no account required)
- *   - Alternative: Formspree (set FORMSPREE_ENDPOINT)
- *   - Long-term: Supabase / Postgres (replace the forwarding block)
- *
- * If no provider is configured, submissions are logged to the server console
- * and the request still returns 200 so the UI confirms success in dev.
+ * Vaultra waitlist endpoint 
+ * If MAILERLITE_API_KEY is missing, submissions are logged to the server
+ * console and the request still returns 200, so the UI works in local dev
+ * before credentials are configured.
  */
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -28,55 +21,50 @@ export async function POST(req: Request) {
       );
     }
 
-    const web3FormsKey = process.env.WEB3FORMS_ACCESS_KEY;
-    const formspreeEndpoint = process.env.FORMSPREE_ENDPOINT;
+    const apiKey = process.env.MAILERLITE_API_KEY;
+    const groupId = process.env.MAILERLITE_GROUP_ID;
 
-    // Option 1: Web3Forms
-    if (web3FormsKey) {
-      const r = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: web3FormsKey,
-          email,
-          subject: "New Vaultra waitlist signup",
-          from_name: "Vaultra Landing",
-          message: `New waitlist signup: ${email}`,
-        }),
-      });
-      if (!r.ok) {
-        const text = await r.text();
-        console.error("Web3Forms error:", text);
-        return NextResponse.json(
-          { error: "Could not submit. Please try again." },
-          { status: 500 }
-        );
-      }
+    // No credentials yet — log only so the UI still confirms success in dev.
+    if (!apiKey) {
+      console.log(
+        `[vaultra-waitlist] MAILERLITE_API_KEY not set. Signup received: ${email}`
+      );
       return NextResponse.json({ ok: true });
     }
 
-    // Option 2: Formspree
-    if (formspreeEndpoint) {
-      const r = await fetch(formspreeEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ email, source: "Vaultra landing" }),
-      });
-      if (!r.ok) {
-        console.error("Formspree error:", await r.text());
-        return NextResponse.json(
-          { error: "Could not submit. Please try again." },
-          { status: 500 }
-        );
-      }
+    const res = await fetch("https://connect.mailerlite.com/api/subscribers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        email,
+        ...(groupId ? { groups: [groupId] } : {}),
+      }),
+    });
+
+    // 201 = new subscriber, 200 = existing subscriber updated. Both succeed —
+    // MailerLite upserts, so a duplicate signup is not an error.
+    if (res.ok) {
       return NextResponse.json({ ok: true });
     }
 
-    // Fallback: log only (dev mode / unconfigured)
-    console.log(
-      `[vaultra-waitlist] No provider configured. Signup received: ${email}`
+    // 422 = MailerLite rejected the address (invalid / role-based / banned).
+    if (res.status === 422) {
+      return NextResponse.json(
+        { error: "Please enter a valid email address." },
+        { status: 400 }
+      );
+    }
+
+    const detail = await res.text();
+    console.error(`MailerLite error (${res.status}):`, detail);
+    return NextResponse.json(
+      { error: "Could not join the waitlist. Please try again." },
+      { status: 502 }
     );
-    return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("Waitlist error:", err);
     return NextResponse.json(

@@ -1,6 +1,7 @@
 "use client";
 
 import { Logo } from "./Logo";
+import { openNewsletterPopup } from "@/lib/newsletter";
 
 export function Footer() {
   return (
@@ -24,7 +25,7 @@ export function Footer() {
                 </svg>
               </SocialLink>
               <SocialLink
-                href="https://www.linkedin.com/company/vaultra-pay"
+                href="https://www.linkedin.com/company/vaultrapay"
                 label="Follow Vaultra on LinkedIn"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -50,12 +51,13 @@ export function Footer() {
             >
               How it works
             </a>
-            <a
-              href="#waitlist"
-              className="text-white/80 hover:text-brand-orange transition-colors text-sm"
+            <button
+              type="button"
+              onClick={openNewsletterPopup}
+              className="text-left text-white/80 hover:text-brand-orange transition-colors text-sm"
             >
               Join waitlist
-            </a>
+            </button>
           </div>
         </div>
 

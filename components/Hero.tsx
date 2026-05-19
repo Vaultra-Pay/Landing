@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { PhoneMockup } from "./PhoneMockup";
+import { openNewsletterPopup } from "@/lib/newsletter";
 
 export function Hero() {
   return (
@@ -41,10 +42,10 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
               className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black tracking-tighter leading-[0.95] mb-5 md:mb-6"
             >
-              <span className="gradient-text">Where Fiat</span>
+              <span className="gradient-text">Crypto In. Fiat Out.</span>
               <br />
-              <span className="gradient-text">Meets </span>
-              <span className="gradient-text-orange">Crypto.</span>
+              <span className="gradient-text">One App. </span>
+              <span className="gradient-text-orange">Zero Friction.</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -54,7 +55,8 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.45 }}
               className="text-lg md:text-xl text-brand-gray-light leading-relaxed mb-2 max-w-xl lg:max-w-2xl mx-auto lg:mx-0"
             >
-              Receive crypto. Convert instantly. Spend like cash.
+              Receive USDT, BTC, ETH, and more into your wallet.
+ Convert instantly to Naira and spend freely.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -62,7 +64,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.55 }}
               className="text-base md:text-lg text-brand-gray mb-9 font-medium"
             >
-              One app. Zero friction.
+              From bank transfers to bills and virtual cards - all in one seamless app.
             </motion.p>
 
             {/* CTAs */}
@@ -72,12 +74,13 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.65 }}
               className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mb-10"
             >
-              <a
-                href="#waitlist"
+              <button
+                type="button"
+                onClick={openNewsletterPopup}
                 className="btn-shine bg-brand-orange hover:bg-brand-orange-dark transition-all hover:scale-[1.03] text-white font-semibold px-5 py-2.5 text-sm sm:px-7 sm:py-3.5 sm:text-base rounded-full shadow-2xl shadow-brand-orange/25 w-auto text-center"
               >
                 Join the Waitlist
-              </a>
+              </button>
               <a
                 href="#how-it-works"
                 className="text-brand-gray-light hover:text-white transition-colors font-medium px-4 py-3.5"

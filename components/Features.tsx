@@ -95,7 +95,7 @@ export function Features() {
           </h2>
           <p className="text-lg text-brand-gray-light leading-relaxed">
             Secure enough to hold your assets. Smart enough to bridge them.
-            Vaultra speaks both languages — DeFi and CeFi — in one seamless app.
+            Vaultra speaks all languages  DeFi - CeFi - TradFi.
           </p>
         </motion.div>
 

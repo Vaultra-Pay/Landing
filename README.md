@@ -1,94 +1,60 @@
-# Vaultra Landing Page
+# Vaultra Pay: Landing Page
 
-The official landing page for **Vaultra Pay** — where fiat meets crypto.
+The official landing page for **Vaultra Pay**, the app that turns crypto into spendable money. Crypto in, fiat out, one app.
 
-Built with Next.js 14 (App Router), TypeScript, Tailwind CSS, and Framer Motion.
+Built with Next.js (App Router), TypeScript, Tailwind CSS, and Framer Motion.
 
----
-
-## Getting started
+## Quick start
 
 ```bash
-cd landing
 npm install
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Waitlist email capture
+## Waitlist
 
-Three options, pick one:
+Signups are captured by the popup and sent to a MailerLite group through `app/api/waitlist/route.ts`.
 
-### Option A — Web3Forms (recommended for launch)
+Create a `.env.local` file in the project root:
 
-1. Go to <https://web3forms.com>
-2. Enter your destination email, get an access key (no account required)
-3. Create `.env.local`:
+```
+MAILERLITE_API_KEY=your-api-token
+MAILERLITE_GROUP_ID=your-group-id
+```
 
-   ```bash
-   cp .env.local.example .env.local
-   ```
+- **API token** — MailerLite dashboard → *Integrations → API*.
+- **Group ID** — open the group in MailerLite; it's the `group=` value in the URL.
 
-4. Paste your key:
+Without these, signups are logged to the server console and the form still works — handy for local development.
 
-   ```
-   WEB3FORMS_ACCESS_KEY=your-access-key-here
-   ```
-
-Signups will arrive in your inbox.
-
-### Option B — Formspree
-
-1. Sign up at <https://formspree.io>, create a form, copy the endpoint URL.
-2. In `.env.local`:
-
-   ```
-   FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
-   ```
-
-### Option C — Supabase (for later, when you're building the real app)
-
-Replace the body of `app/api/waitlist/route.ts` with a Supabase insert. The current code is structured so it's a one-function swap.
-
-## Deploying to Vercel
+## Deploy
 
 ```bash
 npm install -g vercel
 vercel
 ```
 
-Add `WEB3FORMS_ACCESS_KEY` (or `FORMSPREE_ENDPOINT`) in the Vercel dashboard under **Project → Settings → Environment Variables**, then redeploy.
+Add `MAILERLITE_API_KEY` and `MAILERLITE_GROUP_ID` under **Project → Settings → Environment Variables**, then redeploy. Point a custom domain at the deployment whenever you're ready.
 
-You'll get a free `*.vercel.app` URL. Point a custom domain at it whenever you're ready.
+## Brand
 
-## Brand guidelines used
+- **Orange** — `#FF5A1F`
+- **Black** — `#0A0A0A`
+- **Type** — Pretendard Variable
+- **Logo** — SVG, rebuilt from the brand deck (castle + bridge)
 
-- **Primary:** `#FF5A1F` (Vaultra orange)
-- **Background:** `#0A0A0A` (brand black)
-- **Typography:** Pretendard Variable (loaded via CDN)
-- **Logo:** Rebuilt as SVG based on the brand identity deck (castle + bridge)
-
-## Project structure
+## Structure
 
 ```
-landing/
-├── app/
-│   ├── api/waitlist/route.ts    ← waitlist endpoint
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-├── components/
-│   ├── Logo.tsx                 ← Vaultra logo (SVG)
-│   ├── Navbar.tsx
-│   ├── Hero.tsx
-│   ├── Features.tsx
-│   ├── HowItWorks.tsx
-│   ├── Showcase.tsx             ← phone mockup with animations
-│   ├── Waitlist.tsx
-│   └── Footer.tsx
-├── public/
-│   └── favicon.svg
-├── tailwind.config.ts
-└── package.json
+app/
+├── api/waitlist/route.ts   — waitlist endpoint (MailerLite)
+├── layout.tsx
+└── page.tsx
+components/                 — Navbar, Hero, Problem, Features,
+                              HowItWorks, Showcase, Footer,
+                              NewsletterPopup, PhoneMockup, Logo
+lib/
+└── newsletter.ts           — shared popup trigger
 ```
