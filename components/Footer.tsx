@@ -11,10 +11,7 @@ export function Footer() {
           <div className="md:col-span-2">
           <Logo size={57} wordmarkSize={22} className="sm:hidden" />
           <Logo size={63} wordmarkSize={28} className="hidden sm:flex" />
-            <p className="mt-5 text-brand-gray-light text-sm max-w-md leading-relaxed">
-              The pathway between worlds. Vaultra Pay bridges crypto and fiat —
-              built for speed, clarity, and trust.
-            </p>
+          
             <div className="mt-6 flex items-center gap-3">
               <SocialLink
                 href="https://x.com/VaultraPayNG"
@@ -40,16 +37,22 @@ export function Footer() {
               Explore
             </div>
             <a
-              href="#features"
+              href="/#features"
               className="text-white/80 hover:text-brand-orange transition-colors text-sm"
             >
               Features
             </a>
             <a
-              href="#how-it-works"
+              href="/#how-it-works"
               className="text-white/80 hover:text-brand-orange transition-colors text-sm"
             >
               How it works
+            </a>
+            <a
+              href="/blog"
+              className="text-white/80 hover:text-brand-orange transition-colors text-sm"
+            >
+              Blog
             </a>
             <button
               type="button"

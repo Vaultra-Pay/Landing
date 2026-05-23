@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const bullets = [
   {
     title: "Multi-chain support",
-    desc: "USDT, ETH, BTC and more — all under one roof.",
+    desc: "USDT, ETH, BTC and more.",
   },
   {
     title: "Real-time rates",
@@ -13,7 +13,7 @@ const bullets = [
   },
   {
     title: "One-tap settlement",
-    desc: "Bank transfer, card fund, bill pay — in seconds.",
+    desc: "Bank transfer, card fund, bill pay in seconds.",
   },
   {
     title: "Biometric security",
