@@ -15,7 +15,7 @@ const faqs: FAQItem[] = [
       <>
         <p>
           Vaultra Pay is a hybrid crypto-fiat app that lets you receive crypto,
-          convert it instantly to Naira, and spend it in real life — all in
+          convert it instantly to Naira, and spend it in real life - all in
           one place.
         </p>
         <p>You can:</p>
@@ -40,7 +40,7 @@ const faqs: FAQItem[] = [
         </p>
         <p>
           We&apos;re building a seamless bridge between crypto and everyday
-          spending — focused on utility, not trading.
+          spending - focused on utility, not trading.
         </p>
       </>
     ),
@@ -84,8 +84,7 @@ const faqs: FAQItem[] = [
       <>
         <p>
           <strong className="text-white">Yes.</strong> Vaultra lets you convert
-          supported cryptocurrencies into Naira instantly using an automated
-          conversion engine connected to liquidity providers.
+          supported cryptocurrencies into Naira instantly.
         </p>
         <p>No Telegram brokers. No manual P2P process.</p>
       </>
@@ -97,7 +96,7 @@ const faqs: FAQItem[] = [
       <>
         <p>At launch, Vaultra plans to support:</p>
         <ul>
-          <li>USDT (TRC-20 &amp; ERC-20)</li>
+          <li>USDT</li>
           <li>Bitcoin (BTC)</li>
           <li>Ethereum (ETH)</li>
         </ul>
@@ -124,7 +123,7 @@ const faqs: FAQItem[] = [
       <>
         <p>
           <strong className="text-white">No.</strong> Vaultra is designed for
-          everyday users — not just crypto experts.
+          everyday users - not just crypto experts.
         </p>
         <p>
           The goal is simple:{" "}
@@ -238,13 +237,9 @@ export function FAQ() {
           <div className="inline-block px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-semibold tracking-wider uppercase mb-6">
             FAQ
           </div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 gradient-text">
-            Questions, answered.
-          </h2>
-          <p className="text-lg text-brand-gray-light leading-relaxed">
-            Everything you need to know about Vaultra Pay — what it does, what
-            it doesn&apos;t, and how it actually works.
-          </p>
+          <h4 className="text-3xl md:text-5xl font-black tracking-tighter mb-6 gradient-text">
+            Popular Questions and answers
+          </h4>
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-3">

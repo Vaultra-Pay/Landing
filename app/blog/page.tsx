@@ -49,7 +49,7 @@ export default async function BlogIndex() {
               </h1>
               <p className="text-lg md:text-xl text-brand-gray-light leading-relaxed">
                 The future of money, made simple. Notes on crypto, payments,
-                and how Africa actually spends — from the team building Vaultra
+                and how Africa actually spends. From the team building Vaultra
                 Pay.
               </p>
             </div>
