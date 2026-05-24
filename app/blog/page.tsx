@@ -44,7 +44,7 @@ export default async function BlogIndex() {
 
           <div className="site-container relative">
             <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-5 gradient-text">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] pb-2 mb-5 gradient-text">
                 Vaultra Blog
               </h1>
               <p className="text-lg md:text-xl text-brand-gray-light leading-relaxed">

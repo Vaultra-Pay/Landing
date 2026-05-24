@@ -57,7 +57,7 @@ export function Logo({
 }: LogoProps) {
   const computedWordmark = wordmarkSize ?? Math.round(size * 0.62);
   return (
-    <div className={`flex items-center gap-1.5 ${className}`}>
+    <div className={`flex items-center gap-0.5 ${className}`}>
       <LogoMark size={size} />
       {showWordmark && <Wordmark size={computedWordmark} />}
     </div>

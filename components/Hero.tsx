@@ -23,17 +23,7 @@ export function Hero() {
           {/* LEFT: Copy */}
           <div className="lg:col-span-7 text-center lg:text-left">
             {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass mb-6 md:mb-7"
-            >
-              <span className="w-2 h-2 rounded-full bg-brand-orange animate-slow-pulse" />
-              <span className="text-xs md:text-sm text-brand-gray-light tracking-wide">
-                Coming soon to iOS & Android
-              </span>
-            </motion.div>
+           
 
             {/* Headline */}
             <motion.h1
