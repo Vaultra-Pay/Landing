@@ -82,7 +82,7 @@ export function Problem() {
           </h2>
           <p className="text-lg text-brand-gray-light leading-relaxed">
             The hardest part of crypto is using it in real life. People use
-            crypto every day — but turning it into spendable money is still
+            crypto every day but turning it into spendable money is still
             stressful, slow, and fragmented.
           </p>
         </motion.div>

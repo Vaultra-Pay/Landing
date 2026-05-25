@@ -45,7 +45,7 @@ export function Navbar() {
     >
       <div className="site-container flex items-center justify-between py-3.5 md:py-5">
         {/* Logo */}
-        <a href="#" aria-label="Vaultra Pay home" className="flex-shrink-0">
+        <a href="/" aria-label="Vaultra Pay home" className="flex-shrink-0">
           <Logo size={57} wordmarkSize={22} className="sm:hidden" />
           <Logo size={63} wordmarkSize={28} className="hidden sm:flex" />
         </a>
@@ -53,16 +53,28 @@ export function Navbar() {
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-8">
           <a
-            href="#features"
+            href="/"
+            className="text-sm text-brand-gray-light hover:text-white transition-colors font-medium"
+          >
+            Home
+          </a>
+          <a
+            href="/#features"
             className="text-sm text-brand-gray-light hover:text-white transition-colors font-medium"
           >
             Features
           </a>
           <a
-            href="#how-it-works"
+            href="/#how-it-works"
             className="text-sm text-brand-gray-light hover:text-white transition-colors font-medium"
           >
             How it works
+          </a>
+          <a
+            href="/blog"
+            className="text-sm text-brand-gray-light hover:text-white transition-colors font-medium"
+          >
+            Blog
           </a>
           <button
             type="button"
@@ -108,14 +120,20 @@ export function Navbar() {
             className="md:hidden overflow-hidden border-t border-white/5 bg-brand-black/95 backdrop-blur-xl"
           >
             <div className="site-container py-4 flex flex-col gap-1">
-              <MobileLink href="#features" onClick={() => setMenuOpen(false)}>
+              <MobileLink href="/" onClick={() => setMenuOpen(false)}>
+                Home
+              </MobileLink>
+              <MobileLink href="/#features" onClick={() => setMenuOpen(false)}>
                 Features
               </MobileLink>
               <MobileLink
-                href="#how-it-works"
+                href="/#how-it-works"
                 onClick={() => setMenuOpen(false)}
               >
                 How it works
+              </MobileLink>
+              <MobileLink href="/blog" onClick={() => setMenuOpen(false)}>
+                Blog
               </MobileLink>
               <button
                 type="button"

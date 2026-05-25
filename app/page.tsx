@@ -4,8 +4,8 @@ import { Problem } from "@/components/Problem";
 import { Features } from "@/components/Features";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Showcase } from "@/components/Showcase";
+import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
-import { NewsletterPopup } from "@/components/NewsletterPopup";
 import { ShiningDots } from "@/components/ShiningDots";
 
 export default function Home() {
@@ -23,10 +23,9 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <Showcase />
+        <FAQ />
         <Footer />
       </div>
-
-      <NewsletterPopup />
     </main>
   );
 }

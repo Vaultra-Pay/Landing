@@ -23,17 +23,7 @@ export function Hero() {
           {/* LEFT: Copy */}
           <div className="lg:col-span-7 text-center lg:text-left">
             {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass mb-6 md:mb-7"
-            >
-              <span className="w-2 h-2 rounded-full bg-brand-orange animate-slow-pulse" />
-              <span className="text-xs md:text-sm text-brand-gray-light tracking-wide">
-                Coming soon to iOS & Android
-              </span>
-            </motion.div>
+           
 
             {/* Headline */}
             <motion.h1
@@ -56,15 +46,7 @@ export function Hero() {
               className="text-lg md:text-xl text-brand-gray-light leading-relaxed mb-2 max-w-xl lg:max-w-2xl mx-auto lg:mx-0"
             >
               Receive USDT, BTC, ETH, and more into your wallet.
- Convert instantly to Naira and spend freely.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.55 }}
-              className="text-base md:text-lg text-brand-gray mb-9 font-medium"
-            >
-              From bank transfers to bills and virtual cards - all in one seamless app.
+              Convert instantly to Naira and spend freely. From bank transfers to bills and virtual cards all in one seamless app.
             </motion.p>
 
             {/* CTAs */}

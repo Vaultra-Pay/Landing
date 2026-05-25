@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { NewsletterPopup } from "@/components/NewsletterPopup";
 
 export const metadata: Metadata = {
   title: "Vaultra — Where Fiat Meets Crypto",
@@ -53,7 +54,10 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
       </head>
-      <body className="bg-brand-black text-white antialiased">{children}</body>
+      <body className="bg-brand-black text-white antialiased">
+        {children}
+        <NewsletterPopup />
+      </body>
     </html>
   );
 }
