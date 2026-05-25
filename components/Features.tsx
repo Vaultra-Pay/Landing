@@ -7,7 +7,7 @@ const features = [
   {
     title: "Self-Custody Wallet",
     description:
-      "Your keys. Your assets. Your control. A non-custodial core that keeps you in charge — always.",
+      "Your keys. Your assets. Your control. A non-custodial core that keeps you in charge, always.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -53,7 +53,7 @@ const features = [
   {
     title: "Compliance-Aware",
     description:
-      "Secure, regulated, and built with the rules in mind — not in opposition to them.",
+      "Secure, regulated, and built with the rules in mind. Not in opposition to them.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 11l3 3L22 4" />

@@ -14,7 +14,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 max-w-5xl">
           <div>
             <h3 className="text-3xl md:text-5xl font-black tracking-tighter leading-[1.05] text-white">
-              Ready when you are.
+              Don’t miss the launch.
             </h3>
             <p className="mt-3 text-brand-gray-light text-base md:text-lg max-w-md">
               We&apos;ll let you know the moment Vaultra Pay opens.
@@ -42,7 +42,7 @@ export function Footer() {
             <Logo size={63} wordmarkSize={28} className="hidden sm:flex" />
             <p className="mt-5 text-brand-gray-light text-sm leading-relaxed max-w-sm">
               The pathway between worlds. Vaultra Pay bridges crypto and
-              fiat - built for speed, clarity, and trust.
+              fiat. Built for speed, clarity, and trust.
             </p>
           </div>
 

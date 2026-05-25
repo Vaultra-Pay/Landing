@@ -69,11 +69,7 @@ const faqs: FAQItem[] = [
       <>
         <p>
           Non-custodial means you own and control your crypto assets. Vaultra
-          does not hold your private keys or control your wallet funds.
-        </p>
-        <p>
-          Even if Vaultra disappeared tomorrow, your assets would still belong
-          to you.
+          does not hold your private keys or control your wallet funds in your Vaultra non-custodial wallet.
         </p>
       </>
     ),
@@ -123,7 +119,7 @@ const faqs: FAQItem[] = [
       <>
         <p>
           <strong className="text-white">No.</strong> Vaultra is designed for
-          everyday users - not just crypto experts.
+          everyday users, not just crypto experts.
         </p>
         <p>
           The goal is simple:{" "}
